@@ -19,7 +19,7 @@ echo "Installing GPU governor... "
 dnf install libdrm-devel cmake make g++ git -y
 git clone https://gitlab.com/TuxThePenguin0/oberon-governor.git && cd oberon-governor
 cmake . && make && make install
-sudo systemctl enable oberon-governor.service
+systemctl enable oberon-governor.service
 
 # make sure amdgpu and nct6683 options are in the modprobe files and update initrd
 echo -n "Setting amdgpu module option... "
