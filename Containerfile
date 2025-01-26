@@ -6,7 +6,7 @@ FROM ghcr.io/ublue-os/bazzite:stable
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     echo -n "Adding mesa copr... " && \
     curl --output-dir "/etc/yum.repos.d/" --remote-name https://copr.fedorainfracloud.org/coprs/g/exotic-soc/bc250-mesa/repo/fedora-"${FEDORA_MAJOR_VERSION}"/group_exotic-soc-bc250-mesa-fedora-"${FEDORA_MAJOR_VERSION}".repo && \
-    rpm-ostree refresh-md
+    ostree container commit
 
 RUN echo -n "Setting amdgpu module option... " && \
     echo 'options amdgpu sg_display=0' > /etc/modprobe.d/options-amdgpu.conf && \
@@ -32,4 +32,5 @@ RUN echo "Installing GPU governor... " && \
 RUN echo "Fixing up GRUB config..." && \
     sed -i 's/nomodeset//g' /etc/default/grub && \
     sed -i 's/amdgpu\.sg_display=0//g' /etc/default/grub && \
-    grub2-mkconfig -o /etc/grub2.cfg
+    grub2-mkconfig -o /etc/grub2.cfg && \
+    ostree container commit
