@@ -24,9 +24,9 @@ RUN echo -n "Setting RADV_DEBUG option... " && \
     echo 'RADV_DEBUG=nocompute' > /etc/environment
 
 # install segfaults governor
-COPY /home/runner/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm /tmp/oberon-governor-1.0.0-1.x86_64.rpm
+# COPY /home/runner/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm /tmp/oberon-governor-1.0.0-1.x86_64.rpm
 RUN echo "Installing GPU governor... " && \
-    rpm-ostree install --cache-only /tmp/oberon-governor-1.0.0-1.x86_64.rpm && \
+    rpm-ostree install --cache-only **/oberon-governor-1.0.0-1.x86_64.rpm && \
     systemctl enable oberon-governor.service 
 
 RUN echo "Fixing up GRUB config..." && \
