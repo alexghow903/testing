@@ -52,7 +52,7 @@ jobs:
           pwd
           ls
           rpmbuild -bb SPECS/oberon.spec
-          # mv /home/runner/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm /home/runner/work/bazzite-bc250/bazzite-bc250/oberon-governor-1.0.0-1.x86_64.rpm
+          mv /home/runner/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm /home/runner/work/testing/testing/oberon-governor-1.0.0-1.x86_64.rpm
     
       - name: Build Image
         run: podman build . -t bazzite-bc250:latest
