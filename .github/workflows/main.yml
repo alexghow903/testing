@@ -47,7 +47,7 @@ jobs:
           %files\n
           /etc/oberon-config.yaml\n
           /usr/lib/systemd/system/oberon-governor.service\n
-          /usr/local/bin/oberon-governor" > oberon.spec
+          /var/usrlocal/bin/oberon-governor" > oberon.spec
           cd ..
           pwd
           ls
