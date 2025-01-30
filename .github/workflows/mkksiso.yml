@@ -28,8 +28,8 @@ jobs:
     
       - name: Create the custom ISO
         run: |
-          sudo livemedia-creator \
-            # --ks CustomFedora-ks.cfg \
+          livemedia-creator \
+            --ks BC-250.ks \
             --no-virt \
             --make-iso \
             --iso-only \
