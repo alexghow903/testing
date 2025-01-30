@@ -33,3 +33,4 @@ echo "Fixing up GRUB config..."
 sed -i 's/nomodeset//g' /etc/default/grub
 sed -i 's/amdgpu\.sg_display=0//g' /etc/default/grub
 grub2-mkconfig -o /etc/grub2.cfg
+%end
