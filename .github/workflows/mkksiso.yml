@@ -20,15 +20,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
         
-      # - name: Build mkksiso
-      #   run: git clone https://github.com/weldr/lorax.git && cd lorax && sudo make && sudo make install
-
       - name: Install Lorax
-        run: dnf install -y zstd lorax lorax-lmc-novirt anaconda pykickstart dracut-live
+        run: git clone https://github.com/weldr/lorax.git && cd lorax && sudo make && sudo make install
+
+      # - name: Install Lorax
+      #   run: dnf install -y zstd lorax lorax-lmc-novirt anaconda pykickstart dracut-live
     
       - name: Create the custom ISO
         run: |
-          livemedia-creator \
+          sudo livemedia-creator \
             --ks BC-250.ks \
             --no-virt \
             --make-iso \
