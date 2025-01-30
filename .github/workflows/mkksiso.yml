@@ -24,7 +24,7 @@ jobs:
       #   run: git clone https://github.com/weldr/lorax.git && cd lorax && sudo make && sudo make install
 
       - name: Install Lorax
-        run: dnf install -y zstd lorax lorax-lmc-novirt anaconda pykickstart
+        run: dnf install -y zstd lorax lorax-lmc-novirt anaconda pykickstart dracut-live
     
       - name: Create the custom ISO
         run: |
