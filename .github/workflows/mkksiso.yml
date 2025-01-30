@@ -28,5 +28,12 @@ jobs:
     
       - name: Create the custom ISO
         run: |
-          sudo livemedia-creator --make-iso --iso-only --iso=/BC-250.iso --ks=./BC-250.ks --no-virt
+          sudo livemedia-creator \
+            # --ks CustomFedora-ks.cfg \
+            --no-virt \
+            --make-iso \
+            --iso-only \
+            --iso-name BC-250.iso \
+            --resultdir ./Results
+
     
