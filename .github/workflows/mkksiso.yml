@@ -11,10 +11,10 @@ jobs:
   build_push:
     name: Build and push image
     runs-on: ubuntu-latest
-    container:
-      image: fedora:latest
-      # --privileged needed for livemedia-creator
-      options: --privileged
+    # container:
+    #   image: fedora:latest
+    #   # --privileged needed for livemedia-creator
+    #   options: --privileged
 
     steps:
       - name: checkout
