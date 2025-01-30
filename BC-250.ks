@@ -1,5 +1,8 @@
 user --name=bazzite --password=bazzite
 
+%packages
+dracut-live
+
 %post
 ### All credits go to Mothenjoyer69, Segfault, and Neggles.
 ## Thank Neggles for the script.
