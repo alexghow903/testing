@@ -1,4 +1,4 @@
-user bazzite -p bazzite
+user --name=bazzite --password=bazzite
 
 %post
 ### All credits go to Mothenjoyer69, Segfault, and Neggles.
