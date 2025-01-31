@@ -9,7 +9,7 @@ user --name=bazzite --password=bazzite
 #%end
 
 %packages
-dracut-config-generic dracut-live -dracut-config-rescue grub2-efi syslinux
+dracut-live dracut-config-generic -dracut-config-rescue grub2-efi syslinux
 %end
 
 %post
