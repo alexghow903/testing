@@ -1,8 +1,17 @@
 user --name=bazzite --password=bazzite
 
-#%packages
-#dracut-live
-#%end
+%pre
+# install segfaults governor
+echo "Installing GPU governor... "
+dnf install libdrm-devel cmake make g++ git -y
+git clone https://gitlab.com/TuxThePenguin0/oberon-governor.git && cd oberon-governor
+cmake . && make && make install
+
+%end
+
+%packages
+dracut-live
+%end
 
 %post
 ### All credits go to Mothenjoyer69, Segfault, and Neggles.
@@ -18,13 +27,6 @@ dnf5 upgrade -y
 # make sure radv_debug option is set in environment
 echo -n "Setting RADV_DEBUG option... "
 echo 'RADV_DEBUG=nocompute' > /etc/environment
-
-# install segfaults governor
-echo "Installing GPU governor... "
-dnf install libdrm-devel cmake make g++ git -y
-git clone https://gitlab.com/TuxThePenguin0/oberon-governor.git && cd oberon-governor
-cmake . && make && make install
-systemctl enable oberon-governor.service
 
 # make sure amdgpu and nct6683 options are in the modprobe files and update initrd
 echo -n "Setting amdgpu module option... "
