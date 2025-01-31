@@ -6,8 +6,7 @@ user --name=bazzite --password=bazzite
 #dnf install libdrm-devel cmake make g++ git -y
 #git clone https://gitlab.com/TuxThePenguin0/oberon-governor.git && cd oberon-governor
 #cmake . && make && make install
-
-%end
+#%end
 
 %packages
 dracut-config-generic dracut-live -dracut-config-rescue grub2-efi syslinux
