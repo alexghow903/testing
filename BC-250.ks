@@ -10,7 +10,7 @@ cmake . && make && make install
 %end
 
 %packages
-dracut-live
+dracut-config-generic dracut-live -dracut-config-rescue grub2-efi syslinux
 %end
 
 %post
