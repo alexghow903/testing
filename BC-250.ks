@@ -1,11 +1,11 @@
 user --name=bazzite --password=bazzite
 
-%pre
-# install segfaults governor
-echo "Installing GPU governor... "
-dnf install libdrm-devel cmake make g++ git -y
-git clone https://gitlab.com/TuxThePenguin0/oberon-governor.git && cd oberon-governor
-cmake . && make && make install
+#%pre --no-chroot
+## install segfaults governor
+#echo "Installing GPU governor... "
+#dnf install libdrm-devel cmake make g++ git -y
+#git clone https://gitlab.com/TuxThePenguin0/oberon-governor.git && cd oberon-governor
+#cmake . && make && make install
 
 %end
 
