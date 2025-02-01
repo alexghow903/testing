@@ -11,23 +11,23 @@ jobs:
   build_push:
     name: Build and push image
     runs-on: ubuntu-latest
-    container:
-      image: fedora:latest
-      # --privileged needed for livemedia-creator
-      options: --privileged
+    # container:
+    #   image: fedora:latest
+    #   # --privileged needed for livemedia-creator
+    #   options: --privileged
 
     steps:
       - name: checkout
         uses: actions/checkout@v3
 
-      # - name: Install Dependencies
-      #   run: sudo apt install policycoreutils selinux-basics selinux-utils libdnf-dev python-libdnf5 -y
+      - name: Install Dependencies
+        run: sudo apt install policycoreutils selinux-basics selinux-utils libdnf-dev python-libdnf5 -y
         
-      # - name: Install Lorax
-      #   run: git clone https://github.com/weldr/lorax.git && cd lorax && sudo make && sudo make install
-
       - name: Install Lorax
-        run: dnf install -y zstd lorax lorax-lmc-novirt anaconda pykickstart dracut-live
+        run: git clone https://github.com/weldr/lorax.git && cd lorax && sudo make && sudo make install
+
+      # - name: Install Lorax
+      #   run: dnf install -y zstd lorax lorax-lmc-novirt anaconda pykickstart dracut-live
     
       - name: Create the custom ISO
         run: |
