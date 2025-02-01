@@ -1,21 +1,17 @@
-#autopart --type=plain --fstype=ext4
-
+%include /usr/share/spin-kickstarts/fedora-live-kde.ks 
 user --name=bazzite --password=bazzite
 
-#repo --install --name="Copr repo for bc250-mesa owned by @exotic-soc"  --baseurl=https://download.copr.fedorainfracloud.org/results/@exotic-soc/bc250-mesa/fedora-$releasever-$basearch/
-#repo --install --name="Copr repo for system76-scheduler owned by kylegospo" --baseurl=https://download.copr.fedorainfracloud.org/results/kylegospo/system76-scheduler/fedora-$releasever-$basearch/
-
-#network --bootproto=dhcp --device=link
+repo --install --name="Copr repo for bc250-mesa owned by @exotic-soc"  --baseurl=https://download.copr.fedorainfracloud.org/results/@exotic-soc/bc250-mesa/fedora-$releasever-$basearch/
+repo --install --name="Copr repo for system76-scheduler owned by kylegospo" --baseurl=https://download.copr.fedorainfracloud.org/results/kylegospo/system76-scheduler/fedora-$releasever-$basearch/
 
 #url --url=https://download.copr.fedorainfracloud.org/results/@exotic-soc/bc250-mesa/fedora-$releasever-$basearch/
 #url --url=https://download.copr.fedorainfracloud.org/results/kylegospo/system76-scheduler/fedora-$releasever-$basearch/
 
 %packages
-dracut-live
-#bc250-mesa
-#steam
-#gamescope
-#system76-scheduler
+bc250-mesa
+steam
+gamescope
+system76-scheduler
 %end
 
 %post
