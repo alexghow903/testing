@@ -35,6 +35,6 @@ jobs:
       - name: Create the custom ISO
         run: |
           livecd-creator \
-            --config=BC-250.ks \
+            --config=bc250.ks \
             --fslabel=BC-250
             
