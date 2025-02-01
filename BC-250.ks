@@ -1,3 +1,5 @@
+autopart
+
 user --name=bazzite --password=bazzite
 
 #repo --install --name="Copr repo for bc250-mesa owned by @exotic-soc"  --baseurl=https://download.copr.fedorainfracloud.org/results/@exotic-soc/bc250-mesa/fedora-$releasever-$basearch/
@@ -7,8 +9,6 @@ network --bootproto=dhcp --device=link
 
 url --url=https://download.copr.fedorainfracloud.org/results/@exotic-soc/bc250-mesa/fedora-$releasever-$basearch/
 url --url=https://download.copr.fedorainfracloud.org/results/kylegospo/system76-scheduler/fedora-$releasever-$basearch/
-
-autopart
 
 %packages --multilib
 dracut-live
