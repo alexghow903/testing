@@ -1,4 +1,4 @@
-%include /usr/share/spin-kickstarts/fedora-live-kde.ks 
+%include kickstarts/fedora-live-kde.ks 
 user --name=bazzite --password=bazzite
 
 repo --install --name="Copr repo for bc250-mesa owned by @exotic-soc"  --baseurl=https://download.copr.fedorainfracloud.org/results/@exotic-soc/bc250-mesa/fedora-$releasever-$basearch/
