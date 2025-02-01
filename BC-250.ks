@@ -8,6 +8,8 @@ network --bootproto=dhcp --device=link
 url --url=https://download.copr.fedorainfracloud.org/results/@exotic-soc/bc250-mesa/fedora-$releasever-$basearch/
 url --url=https://download.copr.fedorainfracloud.org/results/kylegospo/system76-scheduler/fedora-$releasever-$basearch/
 
+autopart
+
 %packages --multilib
 dracut-live
 bc250-mesa
