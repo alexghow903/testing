@@ -1,4 +1,4 @@
-autopart
+autopart --type=plain --fstype=ext4
 
 user --name=bazzite --password=bazzite
 
