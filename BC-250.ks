@@ -10,13 +10,13 @@ user --name=bazzite --password=bazzite
 #url --url=https://download.copr.fedorainfracloud.org/results/@exotic-soc/bc250-mesa/fedora-$releasever-$basearch/
 #url --url=https://download.copr.fedorainfracloud.org/results/kylegospo/system76-scheduler/fedora-$releasever-$basearch/
 
-%packages --multilib
-dracut-live
-bc250-mesa
-steam
-gamescope
-system76-scheduler
-%end
+#%packages --multilib
+#dracut-live
+#bc250-mesa
+#steam
+#gamescope
+#system76-scheduler
+#%end
 
 %post
 ### All credits go to Mothenjoyer69, Segfault, and Neggles.
