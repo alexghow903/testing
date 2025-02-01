@@ -27,7 +27,7 @@ jobs:
       #   run: git clone https://github.com/weldr/lorax.git && cd lorax && sudo make && sudo make install
 
       - name: Install livecd-tools
-        run: dnf install -y livecd-tools
+        run: dnf install -y livecd-tools git
 
       - name: pull kickstart configs
         run: git clone https://pagure.io/fedora-kickstarts.git kickstarts
