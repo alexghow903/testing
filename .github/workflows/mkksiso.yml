@@ -27,18 +27,11 @@ jobs:
       #   run: git clone https://github.com/weldr/lorax.git && cd lorax && sudo make && sudo make install
 
       - name: Install Lorax
-        run: dnf install -y zstd lorax lorax-lmc-novirt anaconda pykickstart dracut-live
+        run: dnf install -y livecd-tools spin-kickstarts
     
       - name: Create the custom ISO
         run: |
-          livemedia-creator \
-            --ks BC-250.ks \
-            --no-virt \
-            --make-iso \
-            --iso-only \
-            --iso-name BC-250.iso \
-            --resultdir ./Results
-
-          # sudo lorax -p BC250 -v 41 -r 41 \
-          
-    
+          livecd-creator \
+            --config=BC-250.ks \
+            --fslabel=BC-250
+            
