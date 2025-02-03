@@ -43,7 +43,7 @@ jobs:
           cmake .\n
           make\n
           %install\n
-          make_install\n
+          make install\n
           %files\n
           /etc/oberon-config.yaml\n
           /usr/lib/systemd/system/oberon-governor.service\n
