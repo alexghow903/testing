@@ -22,7 +22,7 @@ jobs:
         
       - name: Build Spec file and create RPM package
         run: |
-          dnf install libdrm-devel rpmdevtools cmake make g++ git -y
+          dnf install libdrm-devel rpmdevtools cmake make g++ git podman -y
           # mkdir -p /home/runner/rpmbuild/SOURCES /home/runner/rpmbuild/SPECS
           rpmdev-setuptree
           # cd /home/runner/rpmbuild/SOURCES
