@@ -32,7 +32,7 @@ jobs:
           Version:        1.0.0\n
           Release:        1\n
           Summary:        A GPU governor for the cyan-skillfish gpu in the bc-250\n
-          Source0: https://gitlab.com/mothenjoyer69/oberon-governor/-/archive/main/oberon-governor-main.tar.gz
+          Source0: oberon-governor-main.tar.gz
           URL: https://gitlab.com/mothenjoyer69/oberon-governor
           License:        MIT\n
           BuildRequires:  g++\n
@@ -56,7 +56,6 @@ jobs:
           cd ..
           pwd
           ls
-          spectool -g -R SPECS/oberon.spec
           rpmbuild -bb SPECS/oberon.spec
           # mv /home/runner/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm /home/runner/work/testing/testing/oberon-governor-1.0.0-1.x86_64.rpm
     
