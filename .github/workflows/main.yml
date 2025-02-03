@@ -23,7 +23,7 @@ jobs:
         
       - name: Build Spec file and create RPM package
         run: |
-          sudo apt install libdrm-dev -y
+          sudo apt install libdrm-dev rpmdev -y
           mkdir -p /home/runner/rpmbuild/SOURCES /home/runner/rpmbuild/SPECS
           cd /home/runner/rpmbuild/SOURCES
           wget https://gitlab.com/mothenjoyer69/oberon-governor/-/archive/main/oberon-governor-main.tar.gz
