@@ -58,6 +58,7 @@ jobs:
           spectool -g -R ~/rpmbuild/SPECS/oberon.spec
           rpmbuild -bb ~/rpmbuild/SPECS/oberon.spec
           dnf install ~/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm
+          systemctl enable oberon-governor.service
     
       - name: Build Image
         run: buildah build -t bazzite-bc250:latest -v /github/home/rpmbuild/RPMS/x86_64:/oberon
