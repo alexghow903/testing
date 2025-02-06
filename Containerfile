@@ -26,9 +26,9 @@ RUN echo -n "Setting RADV_DEBUG option... "  && \
 # install segfaults governor
 # COPY /home/runner/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm /tmp/oberon-governor-1.0.0-1.x86_64.rpm
 RUN echo "Installing GPU governor... " && \
-    ls && pwd && \
+    ostree container commit && \
     rpm-ostree install /oberon/oberon-governor-1.0.0-1.x86_64.rpm && \
-    systemctl enable oberon-governor.service 
+    systemctl enable oberon-governor.service
 
 RUN echo "Fixing up GRUB config..."  && \
 #    sed -i 's/nomodeset//g' /etc/default/grub  && \
