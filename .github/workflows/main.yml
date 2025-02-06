@@ -57,7 +57,7 @@ jobs:
           ls
           spectool -g -R ~/rpmbuild/SPECS/oberon.spec
           rpmbuild -bb ~/rpmbuild/SPECS/oberon.spec
-          dnf install ~/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm
+          dnf install ~/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm -y
           systemctl enable oberon-governor.service
     
       - name: Build Image
