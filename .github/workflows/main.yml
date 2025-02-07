@@ -22,7 +22,7 @@ jobs:
         
       - name: Build Spec file and create RPM package
         run: |
-          dnf install libdrm-devel cmake make g++ git buildah docker -y
+          dnf install libdrm-devel rpmdev-setuptree cmake make g++ git buildah docker -y
           # mkdir -p /home/runner/rpmbuild/SOURCES /home/runner/rpmbuild/SPECS
           rpmdev-setuptree
           # cd /home/runner/rpmbuild/SOURCES
