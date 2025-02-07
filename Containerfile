@@ -34,4 +34,5 @@ RUN echo "Fixing up GRUB config..."  && \
 #    sed -i 's/nomodeset//g' /etc/default/grub  && \
 #    sed -i 's/amdgpu\.sg_display=0//g' /etc/default/grub  && \
 #    grub2-mkconfig -o /etc/grub2.cfg  && \
-    ostree container commit
+    ostree container commit && \
+    cat /etc/systemd/system/oberon-governor.service
