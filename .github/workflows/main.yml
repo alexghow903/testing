@@ -11,10 +11,10 @@ jobs:
   build_push:
     name: Build and push image
     runs-on: ubuntu-24.04
-    container:
-      image: fedora:latest
-      # --privileged needed for livemedia-creator
-      options: --privileged
+    # container:
+    #   image: fedora:latest
+    #   # --privileged needed for livemedia-creator
+    #   options: --privileged
 
     steps:
       - name: checkout
@@ -22,12 +22,12 @@ jobs:
         
       - name: Build Spec file and create RPM package
         run: |
-          dnf install libdrm-devel rpmdevtools cmake make g++ git buildah docker -y
-          # mkdir -p /home/runner/rpmbuild/SOURCES /home/runner/rpmbuild/SPECS
-          rpmdev-setuptree
-          # cd /home/runner/rpmbuild/SOURCES
-          # wget https://gitlab.com/mothenjoyer69/oberon-governor/-/archive/main/oberon-governor-main.tar.gz
-          # cd ../SPECS
+          sudo apt install libdrm-dev cmake make g++ git buildah -y
+          mkdir -p /home/runner/rpmbuild/SOURCES /home/runner/rpmbuild/SPECS
+          # rpmdev-setuptree
+          cd /home/runner/rpmbuild/SOURCES
+          wget https://github.com/alexghow903/oberon-governor/archive/refs/heads/main.zip
+          cd /home/runner/rpmbuild/SPECS
           echo -e \
           "Name:           oberon-governor\n
           Version:        1.0.0\n
@@ -55,10 +55,10 @@ jobs:
           /var/usrlocal/bin/oberon-governor" > ~/rpmbuild/SPECS/oberon.spec
           pwd
           ls
-          spectool -g -R ~/rpmbuild/SPECS/oberon.spec
+          # spectool -g -R ~/rpmbuild/SPECS/oberon.spec
           rpmbuild -bb ~/rpmbuild/SPECS/oberon.spec
-          dnf install ~/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm -y
-          systemctl enable oberon-governor.service
+          # dnf install ~/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm -y
+          # systemctl enable oberon-governor.service
     
       - name: Build Image
         run: buildah build -t bazzite-bc250:latest -v /github/home/rpmbuild/RPMS/x86_64:/oberon
