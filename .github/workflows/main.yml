@@ -51,13 +51,14 @@ jobs:
           %{make_install}\n
           %files\n
           /etc/oberon-config.yaml\n
-          /usr/lib/systemd/system/oberon-governor.service\n
-          /usr/local/bin/oberon-governor" > ~/rpmbuild/SPECS/oberon.spec
+          /etc/systemd/system/oberon-governor.service\n
+          /var/usrlocal/bin/oberon-governor" > ~/rpmbuild/SPECS/oberon.spec
           pwd
           ls
           spectool -g -R ~/rpmbuild/SPECS/oberon.spec
           rpmbuild -bb ~/rpmbuild/SPECS/oberon.spec
           dnf install ~/rpmbuild/RPMS/x86_64/oberon-governor-1.0.0-1.x86_64.rpm -y
+          systemctl daemon-reload
           systemctl enable oberon-governor.service
     
       - name: Build Image
