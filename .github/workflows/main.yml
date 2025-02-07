@@ -43,7 +43,7 @@ jobs:
           %description\n
           A GPU governor for the cyan-skillfish gpu in the bc-250\n 
           %prep\n
-          %setup -n oberon-governor-main\n
+          %setup -n oberon-governor-atomic-main\n
           %build\n
           cmake .\n
           %{make_build}\n
